@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Modern URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="glass-card"> <!-- Reusing class name but updated CSS makes it solid -->
+            <div class="logo">
+                <i class="fa-solid fa-link"></i>
+                <h2>Log In</h2>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Log In</button>
+            </form>
+            <p class="auth-footer">Don't have an account? <a href="signup.html">Sign up</a></p>
+            <p class="auth-footer"><a href="index.html">Back to Home</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

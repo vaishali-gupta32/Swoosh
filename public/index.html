@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class="fa-solid fa-link"></i> Shorty
+        </a>
+        <div class="nav-links" id="navLinks">
+            <!-- Injected by JS -->
+            <a href="login.html" class="nav-item">Log In</a>
+            <a href="signup.html" class="nav-item btn-primary">Sign Up Free</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <!-- Main Content Area -->
+        <div style="width: 100%; max-width: 800px;">
+            <div class="hero">
+                <h1>Build stronger digital connections</h1>
+                <p>Use our URL Shortener to create custom links and track your audience with every click.</p>
+            </div>
+
+            <div class="glass-card glass-card-lg">
+                <form id="shortenForm">
+                    <div class="input-group">
+                        <i class="fa-solid fa-link"></i>
+                        <input type="url" id="originalUrl" placeholder="Paste your long link here..." required>
+                    </div>
+                    <!-- Custom Alias Option (Only if logged in?) -->
+                    <div class="input-group hidden" id="customAliasGroup">
+                        <i class="fa-solid fa-tag"></i>
+                        <input type="text" id="customAlias" placeholder="Custom Alias (e.g. 'summer-sale')">
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="padding: 18px; font-size: 1.2rem;">
+                        Shorten now
+                    </button>
+                </form>
+
+                <div class="loader" id="loader"></div>
+
+                <div class="result-card" id="resultCard">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <div>
+                            <p>Short Link</p>
+                            <a href="#" id="shortUrl" target="_blank">short.link/xyz</a>
+                        </div>
+                        <button class="btn-primary" onclick="copyToClipboard()">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+
+                <div id="analyticsSection" class="mt-4 hidden">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Sign in to see more analytics.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

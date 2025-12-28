@@ -1,0 +1,334 @@
+:root {
+    --primary: #0b1736;
+    /* Navy Blue */
+    --primary-hover: #1e2b4f;
+    --accent: #ee6123;
+    /* Bright Orange */
+    --accent-hover: #d25019;
+    --bg-color: #ffffff;
+    --light-bg: #f5f6f7;
+    --text-main: #252628;
+    --text-muted: #575e67;
+    --border-color: #dbe0eb;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --input-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--light-bg);
+    min-height: 100vh;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-brand i {
+    font-size: 1.4rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    color: var(--primary);
+}
+
+/* Auth Pages & Container */
+.auth-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* CARDS: Replaces Glassmorphism */
+.glass-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 3.5rem;
+    border-radius: 8px;
+    /* More squared off */
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: slideUp 0.4s ease-out;
+}
+
+.glass-card-lg {
+    max-width: 900px;
+    padding: 4rem 2rem;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo in Auth Forms */
+.logo {
+    margin-bottom: 2rem;
+}
+
+.logo i {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.logo h2 {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+h2 {
+    color: var(--primary);
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.input-group i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    /* Professional radius */
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(11, 23, 54, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #a0a4ab;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* Special styling for Signup button in Nav */
+a.btn-primary.nav-item {
+    width: auto;
+    padding: 10px 24px;
+    background: var(--primary);
+    color: white;
+}
+
+a.btn-primary.nav-item:hover {
+    color: white;
+    background: var(--primary-hover);
+}
+
+/* Footer Links */
+.auth-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    background: transparent;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Result Card */
+.result-card {
+    background: #e8f3ff;
+    border: 1px solid #cce3ff;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+    display: none;
+    text-align: left;
+}
+
+.result-card p {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.result-card a {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.result-card button.btn-primary {
+    width: auto;
+    padding: 8px 16px;
+    margin-left: 10px;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+/* Loader */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--accent);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .logo i {
+        font-size: 2.5rem;
+    }
+}
